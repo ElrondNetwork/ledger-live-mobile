@@ -56,6 +56,7 @@ const styles = StyleSheet.create({
   root: {
     margin: 16,
     padding: 16,
+    marginBottom: 0,
     paddingVertical: 8,
     paddingRight: 0,
     ...Platform.select({
