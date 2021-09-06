@@ -26,6 +26,7 @@ import SubAccountsList from "./SubAccountsList";
 import CompoundSummary from "../Lending/Account/CompoundSummary";
 import CompoundAccountBodyHeader from "../Lending/Account/AccountBodyHeader";
 import perFamilyAccountHeader from "../../generated/AccountHeader";
+import perFamilyAccountSubHeader from "../../generated/AccountSubHeader";
 import perFamilyAccountBodyHeader from "../../generated/AccountBodyHeader";
 import perFamilyAccountBalanceSummaryFooter from "../../generated/AccountBalanceSummaryFooter";
 import { normalize } from "../../helpers/normalizeSize";
@@ -169,9 +170,14 @@ export function getListHeaderComponents({
   const AccountBodyHeader =
     perFamilyAccountBodyHeader[mainAccount.currency.family];
 
+  const AccountSubHeader = mainAccount
+    ? perFamilyAccountSubHeader[mainAccount.currency.family]
+    : null;
+
   return {
     listHeaderComponents: [
       <Header accountId={account.id} />,
+      <AccountSubHeader />,
       ...(!empty && AccountHeader
         ? [<AccountHeader account={account} parentAccount={parentAccount} />]
         : []),

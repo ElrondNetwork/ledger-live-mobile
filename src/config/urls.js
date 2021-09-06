@@ -136,4 +136,9 @@ export const urls = {
     "https://support.ledgerwallet.com/hc/en-us?utm_source=ledger_live_mobile&utm_medium=self_referral",
   maxSpendable:
     "https://support.ledger.com/hc/en-us/articles/360012960679?utm_source=ledger_live_mobile&utm_medium=self_referral",
+  elrond: {
+    website: "https://elrond.com",
+    github: "https://github.com/ElrondNetwork",
+    twitter: "https://twitter.com/ElrondNetwork",
+  },
 };
