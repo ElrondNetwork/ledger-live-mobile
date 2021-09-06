@@ -165,14 +165,13 @@ export function getListHeaderComponents({
   const AccountBodyHeader =
     perFamilyAccountBodyHeader[mainAccount.currency.family];
 
-  const AccountSubHeader = mainAccount
-    ? perFamilyAccountSubHeader[mainAccount.currency.family]
-    : null;
+  const AccountSubHeader =
+    perFamilyAccountSubHeader[mainAccount.currency.family];
 
   return {
     listHeaderComponents: [
       <Header accountId={account.id} />,
-      <AccountSubHeader />,
+      AccountSubHeader != null && <AccountSubHeader />,
       ...(!empty && AccountHeader
         ? [<AccountHeader account={account} parentAccount={parentAccount} />]
         : []),
