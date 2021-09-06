@@ -11,7 +11,7 @@ import Button from "../../components/Button";
 
 type Props = {
   colors: any,
-}
+};
 
 function AccountSubHeader({ colors }: Props) {
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
@@ -29,7 +29,9 @@ function AccountSubHeader({ colors }: Props) {
     <View style={[styles.root, { backgroundColor: colors.card }]}>
       <View style={styles.cardHeaderContainer}>
         <InfoIcon size={16} color={colors.grey} />
-        <LText color={colors.grey} style={styles.cardHeader}>{t("elrond.account.subHeader.cardTitle")}</LText>
+        <LText color={colors.grey} style={styles.cardHeader}>
+          {t("elrond.account.subHeader.cardTitle")}
+        </LText>
       </View>
       <TouchableHighlight
         activeOpacity={0.6}
@@ -37,8 +39,12 @@ function AccountSubHeader({ colors }: Props) {
         onPress={openDrawer}
       >
         <View horizontal flow={1} alignItems="center">
-          <Button type={"lightSecondary"} IconRight={Chevron} onPress={openDrawer}
-                  title={t("elrond.account.subHeader.moreInfo")} />
+          <Button
+            type={"lightSecondary"}
+            IconRight={Chevron}
+            onPress={openDrawer}
+            title={t("elrond.account.subHeader.moreInfo")}
+          />
         </View>
       </TouchableHighlight>
       <AccountSubHeaderDrawer isOpen={isDrawerOpen} onClose={closeDrawer} />
@@ -54,38 +60,37 @@ const styles = StyleSheet.create({
     paddingRight: 0,
     ...Platform.select({
       android: {
-        elevation: 1
+        elevation: 1,
       },
       ios: {
         shadowOpacity: 0.03,
         shadowRadius: 8,
         shadowOffset: {
-          height: 4
-        }
-      }
+          height: 4,
+        },
+      },
     }),
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    flex: 1
+    flex: 1,
   },
   cardHeaderContainer: {
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
   },
   cardHeader: {
     fontWeight: "600",
     fontSize: 16,
     color: "#142533DD",
-    marginLeft: 8
+    marginLeft: 8,
   },
   customTouchableHighlight: {
-    paddingRight: 14
-  }
+    paddingRight: 14,
+  },
 });
-
 
 export default withTheme(AccountSubHeader);
