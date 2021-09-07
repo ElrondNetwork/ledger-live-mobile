@@ -32,32 +32,9 @@ export default function AccountSubHeaderDrawer({ isOpen, onClose }: Props) {
           {t("elrond.account.subHeader.description3")}
         </LText>
         <View style={styles.linkContainer}>
-          <LText style={styles.linkTitle}>
-            {t("elrond.account.subHeader.website.title")}
-          </LText>
           <ExternalLink
-            text={t("elrond.account.subHeader.website.linkTitle")}
+            text={t("elrond.account.subHeader.website")}
             onPress={() => Linking.openURL(urls.elrond.website)}
-            fontSize={14}
-          />
-        </View>
-        <View style={styles.linkContainer}>
-          <LText style={styles.linkTitle}>
-            {t("elrond.account.subHeader.github.title")}
-          </LText>
-          <ExternalLink
-            text={t("elrond.account.subHeader.github.linkTitle")}
-            onPress={() => Linking.openURL(urls.elrond.github)}
-            fontSize={14}
-          />
-        </View>
-        <View style={styles.linkContainer}>
-          <LText style={styles.linkTitle}>
-            {t("elrond.account.subHeader.twitter.title")}
-          </LText>
-          <ExternalLink
-            text={t("elrond.account.subHeader.twitter.linkTitle")}
-            onPress={() => Linking.openURL(urls.elrond.twitter)}
             fontSize={14}
           />
         </View>
@@ -80,7 +57,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontWeight: "bold",
-    fontSize: 20,
+    fontSize: 18,
     marginBottom: 8,
   },
   description: {
